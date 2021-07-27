@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+<!--form area start-->	
+<div class="form">
+	<!--Login Form start-->
+	<form class="login-form" action="authentication.php" method="post" name="f1" onsubmit="return validation()">
+		<i class="fas fa-user-circle"></i>
+		<input class="user-input" type="text" placeholder="Username" required="" name="user">
+		<input class="user-input" type="password" placeholder="Password" required="" name="pass">
+		<div class="option-01">
+			<label class="remember-me"><input type="checkbox" name="remember" action="rememberme.php">Remember me</label>
+			<a href="#">Forgot your password?</a>
+		</div>
+		<input type="submit" name="" class="btn" value="LOGIN">
+	</form>
+	<!--login form end-->
+	</div>
+<!--form area end-->
+<script type="text/javascript">
+	//validating form
+	function validation()
+	{
+		var id = document.f1.user.value;
+		var ps = document.f1.pass.value;
+		if(id.length == "" && ps.length == "")
+		{
+			alert("Username and Password field are empty");
+			return false;
+		}
+		else
+		{
+		if(id.length == "")
+		{
+			alert("Username is empty");
+			return false;
+		}
+		if(ps.length == "")
+		{
+			alert("Password is empty");
+			return false;
+		}
+	    }
+	}
+</script>
+</body>
+</html>
